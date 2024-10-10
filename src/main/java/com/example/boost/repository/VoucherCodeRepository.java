@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface VoucherCodeRepository extends JpaRepository<VoucherCode, Long> {
     List<VoucherCode> findAllByRecipientEmailAndUsedFalse(String email);
     Optional<VoucherCode> findByCodeAndRecipientEmail(String code, String email);
+    boolean existsByCode(String code);
 }
